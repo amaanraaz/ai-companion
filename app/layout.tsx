@@ -24,15 +24,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${inter.className} flex flex-col p-10  items-center content-center justify-center h-full`}>
-          <SignedOut>
-            <div className="w-fit py-3 px-5 rounded-full bg-lime-400 text-white font-serif font-semibold">
-              <SignInButton/>
-            </div>            
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
+        <body className={inter.className}>
           {children}
         </body>
       </html>

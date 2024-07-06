@@ -8,6 +8,8 @@ import { UserButton } from "@clerk/nextjs";
 import { cn } from "@/lib/utils";
 import { SignInButton, SignedOut } from "@clerk/clerk-react";
 import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/theme-toggle";
+import MobileSideBar from "./MobileSideBar";
 
 const font = Poppins({
     weight: "600",
@@ -16,9 +18,10 @@ const font = Poppins({
 
 const NavBar = () => {
   return (
-    <div className="fixed w-full z-50 flex justify-between items-center py-2 px-4 border-b border-primary/10 bg-secondary">
+    <div className="fixed h-16 w-full z-50 flex justify-between items-center py-2 px-4 border-b border-primary/10 bg-secondary">
         <div className="flex items-center">
-            <Menu className="block md:hidden"/>
+            {/* <Menu className="block md:hidden"/> */}
+            <MobileSideBar/>
             <Link href='/'>
                 <h1 className={cn("hidden md:block text-xl md:text-3xl font-bold text-primary",
                     font.className
@@ -32,6 +35,7 @@ const NavBar = () => {
                 Upgrade
                 <Sparkles className="h-4 w-4 fill-white text-white ml-2"/>
             </Button>
+            <ModeToggle/>
             <SignedOut>
                 <SignInButton/>
             </SignedOut>
